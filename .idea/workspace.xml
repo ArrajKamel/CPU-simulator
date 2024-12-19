@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a12427b8-5088-43a2-8b3b-69b5f4347f94" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPUSimulator_V1.2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/Simulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/ExecutionStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/InstructionDecodeStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/InstructionFetchStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/MemoryStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/Operation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/Stage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stages/WriteBackStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/units/DataMemory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/units/InstructionMemory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/units/PipelineRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/units/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/units/RegisterFile.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2pLbfbtWvmxCrpnpHEBfDltVonW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kamelarraj/UNI/thirdYear/firstSem/StructureofComputerSystem(SCS)/project/CPUSimulator_V1.2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/kamelarraj/UNI/thirdYear/firstSem/StructureofComputerSystem(SCS)/project/CPUSimulator_V1.2/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a12427b8-5088-43a2-8b3b-69b5f4347f94" name="Changes" comment="" />
+      <created>1732548408328</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732548408328</updated>
+      <workItem from="1732548409384" duration="6981000" />
+      <workItem from="1732558227901" duration="1461000" />
+      <workItem from="1732629918971" duration="596000" />
+      <workItem from="1733905443576" duration="598000" />
+      <workItem from="1734158971612" duration="134000" />
+      <workItem from="1734159113433" duration="49564000" />
+      <workItem from="1734511484224" duration="85000" />
+      <workItem from="1734511594099" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/Simulator.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="stages.InstructionDecodeStage" memberName="shiftAmount" />
+        <PinnedItemInfo parentTag="stages.InstructionDecodeStage" memberName="jump" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
