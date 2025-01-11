@@ -35,7 +35,7 @@ public class InstructionMemory {
      * @param value 16-bit instruction to be stored at index (make sure to send a short type value)
      * @return true in success case, false in failure case
      */
-    public boolean setInstruction(int index, short value) {
+    public boolean setInstruction(int index, int value) {
         if(index < 0 || index >= this.size || instructions[index] != 0)
             return false;
         else {

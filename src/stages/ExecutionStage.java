@@ -2,6 +2,7 @@ package stages;
 
 import controller.Simulator;
 
+
 public class ExecutionStage extends Stage{
     //values to be written to the next pipe
     int branchTargetAddress;
@@ -78,6 +79,7 @@ public class ExecutionStage extends Stage{
         }
         if(simulator.getInstructionNumber(2) == Simulator.NOP){
             simulator.setInstructionNumber(3, Simulator.NOP);
+            simulator.getExToMem().clear();
             return;
         }
 
@@ -177,6 +179,26 @@ public class ExecutionStage extends Stage{
             case XOR:
                 result = firstOperand ^ secondOperand;
                 break;
+            case SLT:
+                if((firstOperand - secondOperand) < 0)
+                    result = 1 ;
+                else
+                    result = 0;
+                break;
+            case BEQ:
+                 result = Simulator.DOESNTMATTER;
+                if((firstOperand - secondOperand) == 0)
+                    zero = 1 ;
+                else
+                    zero = 0 ;
+                break;
+            case BNQ:
+                result = Simulator.DOESNTMATTER;
+                if((firstOperand - secondOperand) != 0)
+                    zero = 1 ;
+                else
+                    zero = 0 ;
+                break;
             case NON:
                 break;
             default:
@@ -214,15 +236,15 @@ public class ExecutionStage extends Stage{
                         case 0b110 -> // XOR operation
                                 Operation.XOR;
                         case 0b111 -> // set on less than SLT
-                                Operation.SUB;// first operand is rs, second operand is rt, if the result <0 jump, if not do nothing
+                                Operation.SLT;// first operand is rs, second operand is rt, if the result <0 jump, if not do nothing
                         default -> operation;
                     };
             case 0b001 -> // set on less than immediate
-                    Operation.SUB;
+                    Operation.SLT;
             case 0b010 -> // branch on not equal BNQ
-                    Operation.SUB; // in this instruction, to apply the branch moving, the result must not be zero
+                    Operation.BNQ; // in this instruction, to apply the branch moving, the result must not be zero
             case 0b011 -> // branch on equal BEQ
-                    Operation.SUB; // here the result must be zero to apply branch moving
+                    Operation.BEQ; // here the result must be zero to apply branch moving
             case 0b100 -> // add immediate addi
                     Operation.ADD;
             case 0b101 -> // load word LW

@@ -36,6 +36,7 @@ public class InstructionDecodeStage extends Stage {
      */
     public InstructionDecodeStage(Simulator simulator) {
         super(simulator);
+        shiftAmount = 0 ;
     }
 
     @Override
@@ -46,8 +47,10 @@ public class InstructionDecodeStage extends Stage {
         }
         if(simulator.getInstructionNumber(1) == Simulator.NOP){
             simulator.setInstructionNumber(2, Simulator.NOP);
+            simulator.getIDtoEx().clear();
             return;
         }
+        this.jump = 0;
 
         // read from the previous pipe
         Register instruction = simulator.getIFtoID().getRegister("Instruction");
@@ -58,24 +61,41 @@ public class InstructionDecodeStage extends Stage {
 
         // extract the control signals
         mainControl(opcode);
-        simulator.getIDtoEx().setRegister("ReadData1", simulator.getRegisterFile().readRegister(readAddress1).getValue());
-        simulator.getIDtoEx().setRegister("ReadData2", simulator.getRegisterFile().readRegister(readAddress2).getValue());
+//        simulator.getIDtoEx().setRegister("ReadData1", simulator.getRegisterFile().readRegister(readAddress1).getValue());
+//        simulator.getIDtoEx().setRegister("ReadData2", simulator.getRegisterFile().readRegister(readAddress2).getValue());
 
         if(jump == 1){
             jumpAddress = instruction.getSegment(12, 0);
             simulator.setInstructionNumber(0, jumpAddress);
             clearIFToIDStage();
+            return;
         }
         // set the rest values to the next pipe
         simulator.getIDtoEx().setRegister("PC", PC);
-        simulator.getIDtoEx().setRegister("Ext_imm", Ext_imm);
+        simulator.getIDtoEx().setRegister("Ext_imm", signExtend7to32(Ext_imm));
         simulator.getIDtoEx().setRegister("Function", function);
         simulator.getIDtoEx().setRegister("RTarget", rTarget);
         simulator.getIDtoEx().setRegister("RDestination", rDestination);
         simulator.getIDtoEx().setRegister("ShiftAmount", shiftAmount);
         simulator.getIDtoEx().setRegister("RSource", instruction.getSegment(12, 10));// forwarding purpose
+        simulator.getIDtoEx().setRegister("ReadData1", simulator.getRegisterFile().readRegister(readAddress1).getValue());
+        simulator.getIDtoEx().setRegister("ReadData2", simulator.getRegisterFile().readRegister(readAddress2).getValue());
+
 
         simulator.setInstructionNumber(2, simulator.getInstructionNumber(1));
+    }
+
+    public static int signExtend7to32(int input) {
+        // Mask to extract the sign bit (6th bit in a 7-bit number, 0-indexed)
+        int signBit = (input >> 6) & 1;
+
+        if (signBit == 1) {
+            // If the sign bit is 1, extend by filling the upper 25 bits with 1s
+            return input | 0xFFFFFF80; // 0xFFFFFF80 is a mask with the lower 7 bits 0 and upper 25 bits 1
+        } else {
+            // If the sign bit is 0, simply return the input as it fits in 32 bits
+            return input & 0x7F; // Ensure only the lower 7 bits are used
+        }
     }
 
     private void clearIFToIDStage() {
@@ -201,5 +221,4 @@ public class InstructionDecodeStage extends Stage {
         simulator.getIDtoEx().setRegister("ALUSrc", ALUSrc);
         simulator.getIDtoEx().setRegister("RegDst", regDst);
     }
-
 }

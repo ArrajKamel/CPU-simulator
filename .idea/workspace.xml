@@ -5,29 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12427b8-5088-43a2-8b3b-69b5f4347f94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPUSimulator_V1.2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/Parser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/Simulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/ExecutionStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/InstructionDecodeStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/InstructionFetchStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/MemoryStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/Stage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stages/WriteBackStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/units/DataMemory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/units/InstructionMemory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/units/PipelineRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/units/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/units/RegisterFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/BranchInstructionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/DataForwardingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/I_TypeInstructionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/R_TypeInstructionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPUSimulator_V1.2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CPUSimulator_V1.2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stages/ExecutionStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stages/ExecutionStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stages/InstructionDecodeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stages/InstructionDecodeStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stages/InstructionFetchStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stages/InstructionFetchStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stages/MemoryStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stages/MemoryStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stages/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stages/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stages/WriteBackStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stages/WriteBackStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/InstructionMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/InstructionMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/PipelineRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/PipelineRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Register.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,31 +48,150 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kamelarraj/UNI/thirdYear/firstSem/StructureofComputerSystem(SCS)/project/CPUSimulator_V1.2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/kamelarraj/UNI/thirdYear/firstSem/StructureofComputerSystem(SCS)/project/CPUSimulator_V1.2/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.BranchInstructionTest.executor": "Run",
+    "JUnit.DataForwardingTest.TestForwardingFromTheEXStage.executor": "Run",
+    "JUnit.DataForwardingTest.TestForwardingFromTheMEMStage.executor": "Run",
+    "JUnit.DataForwardingTest.executor": "Run",
+    "JUnit.I_TypeInstructionTest.executor": "Run",
+    "JUnit.I_TypeInstructionTest.testAddiInstruction.executor": "Run",
+    "JUnit.InstructionTest.executor": "Run",
+    "JUnit.InstructionTest.testANDInstruction.executor": "Run",
+    "JUnit.InstructionTest.testAddInstruction.executor": "Run",
+    "JUnit.InstructionTest.testAddiInstruction.executor": "Run",
+    "JUnit.InstructionTest.testLWInstruction.executor": "Run",
+    "JUnit.InstructionTest.testNOPInstruction.executor": "Run",
+    "JUnit.InstructionTest.testORInstruction.executor": "Run",
+    "JUnit.InstructionTest.testSLLInstruction.executor": "Run",
+    "JUnit.InstructionTest.testSLTInstruction.executor": "Run",
+    "JUnit.InstructionTest.testSLTiInstruction.executor": "Run",
+    "JUnit.InstructionTest.testSRLInstruction.executor": "Run",
+    "JUnit.InstructionTest.testSWInstruction.executor": "Run",
+    "JUnit.InstructionTest.testSubInstruction.executor": "Run",
+    "JUnit.InstructionTest.testXORInstruction.executor": "Run",
+    "JUnit.J_TypeInstructionTest.executor": "Run",
+    "JUnit.J_TypeInstructionTest.testBranchOnEqualInstruction.executor": "Run",
+    "JUnit.J_TypeInstructionTest.testJumpInstruction.executor": "Run",
+    "JUnit.J_TypeInstructionTest.testSignUnit.executor": "Run",
+    "JUnit.R_TypeInstructionTest.executor": "Run",
+    "JUnit.R_TypeInstructionTest.testAddInstruction.executor": "Run",
+    "JUnit.R_TypeInstructionTest.testNOPInstruction.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/kamelarraj/Desktop/UNI/thirdYear/firstSem/StructureofComputerSystem(SCS)/project/CPUSimulator_V1.2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/kamelarraj/UNI/thirdYear/firstSem/StructureofComputerSystem(SCS)/project/CPUSimulator_V1.2/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager" selected="JUnit.BranchInstructionTest">
+    <configuration name="BranchInstructionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPUSimulator_V1.2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BranchInstructionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BranchInstructionTest.testJumpInstruction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPUSimulator_V1.2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BranchInstructionTest" />
+      <option name="METHOD_NAME" value="testJumpInstruction" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataForwardingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPUSimulator_V1.2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.DataForwardingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="I_TypeInstructionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPUSimulator_V1.2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.I_TypeInstructionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="R_TypeInstructionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPUSimulator_V1.2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.R_TypeInstructionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BranchInstructionTest" />
+        <item itemvalue="JUnit.BranchInstructionTest.testJumpInstruction" />
+        <item itemvalue="JUnit.DataForwardingTest" />
+        <item itemvalue="JUnit.I_TypeInstructionTest" />
+        <item itemvalue="JUnit.R_TypeInstructionTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -98,27 +211,69 @@
       <workItem from="1734159113433" duration="49564000" />
       <workItem from="1734511484224" duration="85000" />
       <workItem from="1734511594099" duration="38000" />
+      <workItem from="1734592579683" duration="2320000" />
+      <workItem from="1736074044782" duration="20570000" />
+      <workItem from="1736407402842" duration="14808000" />
+      <workItem from="1736507263736" duration="20082000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/stages/ExecutionStage.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/stages/InstructionFetchStage.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/stages/ExecutionStage.java</url>
+          <line>187</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/Simulator.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="20" />
+          <line>73</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/stages/WriteBackStage.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo parentTag="stages.InstructionDecodeStage" memberName="shiftAmount" />
+        <PinnedItemInfo parentTag="controller.Simulator" memberName="registerFile" />
+        <PinnedItemInfo parentTag="stages.InstructionFetchStage" memberName="instruction" />
         <PinnedItemInfo parentTag="stages.InstructionDecodeStage" memberName="jump" />
+        <PinnedItemInfo parentTag="stages.InstructionDecodeStage" memberName="jumpAddress" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="simulator.tmpInstructionsNumbers" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

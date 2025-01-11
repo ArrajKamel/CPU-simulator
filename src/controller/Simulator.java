@@ -9,7 +9,7 @@ import units.RegisterFile;
 import java.util.Arrays;
 
 public class Simulator {
-    public static final int NOP = -1, EMPTY = -2;
+    public static final int NOP = 0xffff0000, EMPTY = -2, DOESNTMATTER = 0xffff0000;
 
     PipelineRegister IFtoID;
     PipelineRegister IDtoEx;
@@ -68,6 +68,7 @@ public class Simulator {
         int clockCycle = 0;
 
         while (isBusy())
+//        while (clockCycle < 30)
         {
             //Run Stages one by one where in which they do not influence each others until the pipelines get updated by the function updatePipelines()
             instructionFetchStage.run();

@@ -54,6 +54,7 @@ public class MemoryStage extends Stage{
         }
         if(simulator.getInstructionNumber(3) == Simulator.NOP){
             simulator.setInstructionNumber(4, Simulator.NOP);
+            simulator.getMemToWb().clear();
             return;
         }
         readFromEXToMEM();
@@ -64,16 +65,17 @@ public class MemoryStage extends Stage{
 
 
 
-        // we have to possible operations (read & write), MemWrite signal determines
-        if(memWrite == 1){ // write operation
-            simulator.getDataMemory().write(address, writeData);
-            memoryData = 0;
-        }else { // read operation
-            memoryData = simulator.getDataMemory().read(address);
+        if(ALUResult >= 0) {
+            // we have to possible operations (read & write), MemWrite signal determines
+            if (memWrite == 1) { // write operation
+                simulator.getDataMemory().write(address, writeData);
+                memoryData = 0;
+            } else { // read operation
+                memoryData = simulator.getDataMemory().read(address);
+            }
         }
-
-        // calculate the PCSrc signal which can be done in IF stage
-        PCSrc = (branch == 1 && zero == 1) ? 1 : 0;
+//        // calculate the PCSrc signal which can be done in IF stage
+//        PCSrc = (branch == 1 && zero == 1) ? 1 : 0;
 
         // write values to the next pipe
         simulator.getMemToWb().setRegister("MemToReg", memToReg);

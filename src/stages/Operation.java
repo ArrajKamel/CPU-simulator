@@ -8,7 +8,10 @@ public enum Operation {
     AND(4),
     OR(5),
     XOR(6),
-    NON(7);
+    SLT(7),
+    BEQ(8),
+    BNQ(9),
+    NON(10);
 
 
     private final int value;

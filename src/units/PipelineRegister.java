@@ -129,6 +129,11 @@ public class PipelineRegister {
             setRegister(entry.getKey(), entry.getValue().getValue());
     }
 
+    public void clear(){
+        for(Entry<String, Register> entry: registers.entrySet())
+            setRegister(entry.getKey(), 0);
+    }
+
     /**
      * Returns a string representation of the pipeline register
      */

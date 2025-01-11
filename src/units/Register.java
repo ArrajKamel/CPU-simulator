@@ -30,7 +30,7 @@ public class Register {
     }
 
     public int getBit(int position){
-        return (value >> position) & ((1 << position + 1)-1);
+        return (value >> position) & 1;
     }
 
     /**

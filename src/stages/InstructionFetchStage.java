@@ -5,9 +5,11 @@ public class InstructionFetchStage extends Stage{
     int PC ;
     int instruction;
 
-    // incoming
+    // coming
     int PCSrc;
     int jump;
+    int branch;
+    int zero;
     int branchTargetAddress;
 
     /**
@@ -30,24 +32,43 @@ public class InstructionFetchStage extends Stage{
             simulator.setInstructionNumber(1, Simulator.EMPTY);
             return;
         }
+        // check if there is BEQ or BNQ instruction
+        branch = simulator.getExToMem().getRegister("Branch").getValue();
+        zero = simulator.getExToMem().getRegister("Zero").getValue();
+        PCSrc = (branch == 1 && zero == 1) ? 1 : 0;
+        branchTargetAddress = simulator.getExToMem().getRegister("BranchTargetAddress").getValue();
+        jump = simulator.getInstructionDecodeStage().jump;
 
         simulator.setInstructionNumber(1, PC);
-        //get instruction
-        instruction = simulator.getInstructionMemory().getInstruction(PC);
-        // get the value of the PC
-        PCSrc = simulator.getMemoryStage().PCSrc;
-        jump = simulator.getInstructionDecodeStage().jump;
         if(PCSrc == 1 && jump == 0){
-            // TODO BRANCH INSTRUCTION
             PC = branchTargetAddress;
+            simulator.setInstructionNumber(1, PC);
+            instruction = simulator.getInstructionMemory().getInstruction(PC);
+            PC++;
+            PCSrc = 0;
         }else if (PCSrc == 0 && jump == 1){
             PC = simulator.getInstructionDecodeStage().jumpAddress;
-            // TODO JUMP INSTRUCTION
+            simulator.setInstructionNumber(1, PC);
+            instruction = simulator.getInstructionMemory().getInstruction(PC);
+            PC++;
+            jump = 0;
+            simulator.getInstructionDecodeStage().jump = 0;
         }else if (PCSrc == 0 && jump == 0){
+            instruction = simulator.getInstructionMemory().getInstruction(PC);
+            if(instruction == Simulator.NOP){
+                simulator.setInstructionNumber(1, Simulator.NOP);
+                PC++;
+                if(PC < simulator.getInstructionMemory().getNumberOfInstructions())
+                    simulator.setInstructionNumber(0,PC);
+                else
+                    simulator.setInstructionNumber(0, Simulator.EMPTY);
+                return;
+            }
             PC++;
         }else {
             System.out.println("impossible, jump and PCSrc are ones");
         }
+
 
 
         // write values to IF/ID pipe

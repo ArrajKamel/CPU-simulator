@@ -31,12 +31,10 @@ public class WriteBackStage extends Stage{
 
         // if regWrite is zero then this stage does nothing
         if(simulator.getMemToWb().getRegister("RegWrite").getValue() == 1){
-        readFromMEMToWB();
-
-        // the only work here is to determine the value which has to be written back to RF
-        writeData = (memToReg == 1) ? memoryData : ALUResult;
-
-        simulator.getRegisterFile().writeRegister(writeAddress, writeData);
+            readFromMEMToWB();
+            // the only work here is to determine the value which has to be written back to RF
+            writeData = (memToReg == 1) ? memoryData : ALUResult;
+            simulator.getRegisterFile().writeRegister(writeAddress, writeData);
         }
     }
 
