@@ -43,7 +43,7 @@ public class RegisterFile {
     {
         String r = "";
         for(int i = 0; i < 8; ++i)
-            r += registers[i].toString() + "\n";
+            r += "RF("+i+")"+registers[i].toString() + "\n";
         return r;
     }
 }

@@ -95,8 +95,8 @@ public class Register {
         while(r.length() < size)
             r = "0" + r;
         if(name != null)
-            r = name + ": " + r;
-        return r + " (DEC = "+value+", HEX = "+ Integer.toHexString(value) +")";
+            r = name + " • " + r;
+        return r + " (DEC="+value+")";
     }
 
 

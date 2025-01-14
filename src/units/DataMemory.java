@@ -41,7 +41,7 @@ public class DataMemory {
     {
         StringBuilder r = new StringBuilder();
         for(int i = 0; i <= maximumUsedAddress; ++i)
-            r.append(String.format("%d: %s = %d\n", i, Integer.toBinaryString(data[i]), data[i]));
+            r.append("M[").append(i).append("] • ").append(Integer.toBinaryString(data[i])).append("\n");
         return r.toString();
     }
 }

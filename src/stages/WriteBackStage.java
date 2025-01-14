@@ -5,13 +5,11 @@ import controller.Simulator;
 public class WriteBackStage extends Stage{
 
     int memToReg;
-//    int regWrite;
     int memoryData;
     int ALUResult;
     int writeAddress;
     // stage output
     int writeData;
-
 
     /**
      * Constructs a new stage
@@ -37,8 +35,6 @@ public class WriteBackStage extends Stage{
             simulator.getRegisterFile().writeRegister(writeAddress, writeData);
         }
     }
-
-
     /**
      * Reads and stores values from the MEM/WB pipeline register.
      * These values are used during the Write-Back stage of the simulator pipeline.
@@ -51,7 +47,6 @@ public class WriteBackStage extends Stage{
      */
     private void readFromMEMToWB() {
         memToReg = simulator.getMemToWb().getRegister("MemToReg").getValue();
-//        regWrite = simulator.getMemToWb().getRegister("RegWrite").getValue();
         memoryData = simulator.getMemToWb().getRegister("MemoryData").getValue();
         ALUResult = simulator.getMemToWb().getRegister("ALUResult").getValue();
         writeAddress = simulator.getMemToWb().getRegister("WriteAddress").getValue();

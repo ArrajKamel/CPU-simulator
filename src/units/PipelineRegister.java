@@ -141,7 +141,7 @@ public class PipelineRegister {
     {
         String r = "";
         for(Entry<String, Register> entry: registers.entrySet())
-            r += String.format("%s %s\n", entry.getKey(), entry.getValue());
+            r += String.format("%s\n %s\n", entry.getKey(), entry.getValue());
         return r;
     }
 

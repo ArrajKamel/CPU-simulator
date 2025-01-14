@@ -35,8 +35,7 @@ public class Simulator {
      * Constructs a new simulator that has four pipeline registers, three data units
      * and five stages (helper simulators for each pipeline stage)
      */
-    public Simulator()
-    {
+    public Simulator(){
         IFtoID = new PipelineRegister(0);
         IDtoEx = new PipelineRegister(1);
         ExToMem = new PipelineRegister(2);
@@ -60,16 +59,14 @@ public class Simulator {
     /**
      * Runs the simulator
      */
-    public void run()
-    {
+    public void run() {
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         System.out.println("                Start of Program");
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         int clockCycle = 0;
 
-        while (isBusy())
-//        while (clockCycle < 30)
-        {
+        while (isBusy()) {
+
             //Run Stages one by one where in which they do not influence each others until the pipelines get updated by the function updatePipelines()
             instructionFetchStage.run();
             instructionDecodeStage.run();
@@ -101,6 +98,33 @@ public class Simulator {
     public InstructionDecodeStage getInstructionDecodeStage() {	return instructionDecodeStage; }
     public MemoryStage getMemoryStage() { return memoryStage; }
 
+    public String[] getInstructionAction() {
+        return instructionAction;
+    }
+
+    public int[] getTmpInstructionsNumbers() {
+        return tmpInstructionsNumbers;
+    }
+
+    public int[] getInstructionsNumbers() {
+        return instructionsNumbers;
+    }
+
+    public WriteBackStage getWriteBackStage() {
+        return writeBackStage;
+    }
+
+    public ExecutionStage getExecutionStage() {
+        return executionStage;
+    }
+
+    public InstructionFetchStage getInstructionFetchStage() {
+        return instructionFetchStage;
+    }
+
+    public void setInstructionMemory(InstructionMemory instructionMemory) {
+        this.instructionMemory = instructionMemory;
+    }
 
     /**
      * Gets the instruction number of a certain stage in the current clock cycle
@@ -114,8 +138,7 @@ public class Simulator {
      * @param stageID the id of the stage to set its next instruction
      * @param instructionNumber the instruction number to be set
      */
-    public void setInstructionNumber(int stageID, int instructionNumber)
-    {
+    public void setInstructionNumber(int stageID, int instructionNumber) {
         tmpInstructionsNumbers[stageID] = instructionNumber;
     }
 
@@ -123,10 +146,8 @@ public class Simulator {
      * Updates the instruction numbers of all stages.
      * This method is called when moving to a new clock cycle.
      */
-    public void updateInstructionNumbers()
-    {
-        for(int i = 0; i < 5; ++i)
-        {
+    public void updateInstructionNumbers() {
+        for(int i = 0; i < 5; ++i) {
             instructionsNumbers[i] = tmpInstructionsNumbers[i];
             tmpInstructionsNumbers[i] = EMPTY;
         }
@@ -136,8 +157,7 @@ public class Simulator {
      * Updates the values of the pipeline registers.
      * This method is called when moving to a new clock cycle.
      */
-    private void updatePipelines()
-    {
+    public void updatePipelines() {
         IFtoID.update();
         IDtoEx.update();
         ExToMem.update();
@@ -148,15 +168,14 @@ public class Simulator {
      * Checks whether the processor is executing an instruction in any of its stages.
      * @return
      */
-    private boolean isBusy()
-    {
+    public boolean isBusy() {
         for(int instructionNumber: instructionsNumbers)
             if(instructionNumber != EMPTY)
                 return true;
         return false;
     }
 
-    private void print(int clockCycle){
+    public void print(int clockCycle){
         if(clockCycle > 1)
             System.out.println("##############################################\n");
         System.out.printf("Clock Cycle %2d\n^^^^^^^^^^^^^^\n", clockCycle);

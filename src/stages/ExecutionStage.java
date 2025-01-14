@@ -93,7 +93,7 @@ public class ExecutionStage extends Stage{
         // set the operand of the ALU
         // briefly forwarding is get the value, which will be written in the RF, before it is written
         // by bringing it from the memory stage or write back stage, where this value is ready but not written in RF yet
-        //and we do not want to wait for it to be written, we need it immediately
+        // and we do not want to wait for it to be written, we need it immediately
         // of course we need the value of rs to check if we should forward data for readData1
         // and we need to check the value of RegWrite s, where we have two of them,
         // one from EXToMem and the second form MemToWB
@@ -242,22 +242,21 @@ public class ExecutionStage extends Stage{
             case 0b001 -> // set on less than immediate
                     Operation.SLT;
             case 0b010 -> // branch on not equal BNQ
-                    Operation.BNQ; // in this instruction, to apply the branch moving, the result must not be zero
+                    Operation.BNQ;
             case 0b011 -> // branch on equal BEQ
-                    Operation.BEQ; // here the result must be zero to apply branch moving
+                    Operation.BEQ;
             case 0b100 -> // add immediate addi
                     Operation.ADD;
             case 0b101 -> // load word LW
-                    Operation.ADD; // the result is the address to be read from the memory and written on the RF
+                    Operation.ADD;
             case 0b110 -> // store word SW
-                    Operation.ADD; // the result is the address to be written over in the memory
+                    Operation.ADD;
             case 0b111 -> // jump nothing for alu to do
                     Operation.NON;
             default -> operation;
         };
         return operation;
     }
-
 
     /**
      * Reads and loads various values from the ID to EX pipeline register into the corresponding
@@ -297,5 +296,4 @@ public class ExecutionStage extends Stage{
 
         rSource = simulator.getIDtoEx().getRegister("RSource").getValue();
     }
-
 }

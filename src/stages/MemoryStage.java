@@ -63,10 +63,8 @@ public class MemoryStage extends Stage{
         int address = ALUResult;
         int writeData = readData2;
 
-
-
         if(ALUResult >= 0) {
-            // we have to possible operations (read & write), MemWrite signal determines
+            // we have two possible operations (read & write), MemWrite signal determines
             if (memWrite == 1) { // write operation
                 simulator.getDataMemory().write(address, writeData);
                 memoryData = 0;
@@ -74,8 +72,6 @@ public class MemoryStage extends Stage{
                 memoryData = simulator.getDataMemory().read(address);
             }
         }
-//        // calculate the PCSrc signal which can be done in IF stage
-//        PCSrc = (branch == 1 && zero == 1) ? 1 : 0;
 
         // write values to the next pipe
         simulator.getMemToWb().setRegister("MemToReg", memToReg);
@@ -85,32 +81,6 @@ public class MemoryStage extends Stage{
         simulator.getMemToWb().setRegister("WriteAddress", writeAddress);
 
         simulator.setInstructionNumber(4, simulator.getInstructionNumber(3));
-
-
-        // Set Next Instruction for Instruction Fetch
-//        if((simulator.getExToMem().getRegister("Branch").getValue() & simulator.getExtoMem().getRegister("Zero").getValue()) == 1)
-//        {
-//            // Stall in case of branch
-//            // 1. Clear IF/ID for next instruction
-//            simulator.getIFtoID().setRegister("Instruction", 0);
-//            simulator.getIFtoID().setRegister("PC", 0);
-//
-//            // 2. Clear ID/EX for next instruction
-//            simulator.getIDtoEx().setRegister("MemWrite", 0);
-//            simulator.getIDtoEx().setRegister("MemRead", 0);
-//            simulator.getIDtoEx().setRegister("Branch", 0);
-//            simulator.getIDtoEx().setRegister("RegWrite", 0);
-//
-//            // 3. Clear EX/MEM for next instruction
-//            simulator.getExToMem().setRegister("MemWrite", 0);
-//            simulator.getExToMem().setRegister("MemRead", 0);
-//            simulator.getExToMem().setRegister("Branch", 0);
-//            simulator.getExToMem().setRegister("RegWrite", 0);
-//
-//            simulator.setInstructionNumber(1, Simulator.NOP);
-//            simulator.setInstructionNumber(2, Simulator.NOP);
-//            simulator.setInstructionNumber(3, Simulator.NOP);
-//        }
     }
 
     /**

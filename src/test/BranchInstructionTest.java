@@ -65,10 +65,10 @@ public class BranchInstructionTest {
     @Test
     public void testJumpInstruction() {
         // initialize register file
-        registerFile.writeRegister(7, 3); //load RF(0) = 3
+        registerFile.writeRegister(7, 3); //load RF(7) = 3
         registerFile.writeRegister(1, 7); //load RF(1) = 7
         // program instructions
-        controller.simulator.getInstructionMemory().setInstruction(0,  0b000_001_111_010_0_000); // add RF(2), RF(1), RF(0) <-> RF(2) = RF(1) + RF(0) = 10
+        controller.simulator.getInstructionMemory().setInstruction(0,  0b000_001_111_010_0_000); // add RF(2), RF(1), RF(0) <-> RF(2) = RF(1) + RF(7) = 10
         controller.simulator.getInstructionMemory().setInstruction(1, 0b011_001_010_0000101);// if (RF(2) == RF(1)) jump to address (pc+1+imm) where imm
         controller.simulator.getInstructionMemory().setInstruction(2, Simulator.NOP);
         controller.simulator.getInstructionMemory().setInstruction(3, Simulator.NOP);

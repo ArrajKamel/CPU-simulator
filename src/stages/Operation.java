@@ -16,12 +16,10 @@ public enum Operation {
 
     private final int value;
 
-    // Constructor for the enum
     Operation(int value) {
         this.value = value;
     }
 
-    // Getter to access the associated integer value
     public int getValue() {
         return value;
     }

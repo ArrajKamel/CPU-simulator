@@ -61,8 +61,6 @@ public class InstructionDecodeStage extends Stage {
 
         // extract the control signals
         mainControl(opcode);
-//        simulator.getIDtoEx().setRegister("ReadData1", simulator.getRegisterFile().readRegister(readAddress1).getValue());
-//        simulator.getIDtoEx().setRegister("ReadData2", simulator.getRegisterFile().readRegister(readAddress2).getValue());
 
         if(jump == 1){
             jumpAddress = instruction.getSegment(12, 0);

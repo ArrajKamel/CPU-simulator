@@ -2,7 +2,7 @@ package stages;
 import controller.Simulator;
 
 public class InstructionFetchStage extends Stage{
-    int PC ;
+    public int PC ;
     int instruction;
 
     // coming
@@ -68,8 +68,6 @@ public class InstructionFetchStage extends Stage{
         }else {
             System.out.println("impossible, jump and PCSrc are ones");
         }
-
-
 
         // write values to IF/ID pipe
         simulator.getIFtoID().setRegister("PC", PC);

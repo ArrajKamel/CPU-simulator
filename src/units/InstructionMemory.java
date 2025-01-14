@@ -55,4 +55,11 @@ public class InstructionMemory {
         return numberOfInstructions;
     }
 
+    public void clear(){
+        for (int i =0 ;  i < numberOfInstructions ; i++){
+            instructions[i] = 0;
+        }
+        numberOfInstructions = 0;
+    }
+
 }
